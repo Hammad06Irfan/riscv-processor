@@ -56,7 +56,7 @@ All modules and the integrated processor core were verified via self-checking Sy
 
 ### 1. Arithmetic Logic Unit (ALU)
 
-![ALU Waveform](docs/waveforms/Alu_Waveform.png)
+![ALU Waveform](Demo_pics/waveforms/Alu_Waveform.png)
 
 The ALU supports all standard RV32I operations, signed comparisons, and equality zero-flag assertion:
 * **`0 ps – 10000 ps` (ADD):** Inputs $a = 15$, $b = 27$ with `alu_ctrl = 0` $\rightarrow$ `result = 42`.
@@ -69,7 +69,7 @@ The ALU supports all standard RV32I operations, signed comparisons, and equality
 
 ### 2. Register File
 
-![Register File Waveform](docs/waveforms/Regfile_Waveform.png)
+![Register File Waveform](Demo_pics/waveforms/Regfile_Waveform.png)
 
 Validates synchronous dual-read and single-write behavior across 32 general-purpose registers:
 * **`0 ps – 15000 ps` (Active Reset):** `rst_n = 0` clears all internal registers to `0x00000000`.
@@ -83,7 +83,7 @@ Validates synchronous dual-read and single-write behavior across 32 general-purp
 
 ### 3. Immediate Generator
 
-![Immediate Generator Waveform](docs/waveforms/Imm_gen_Waveform.png)
+![Immediate Generator Waveform](Demo_pics/waveforms/Imm_gen_Waveform.png)
 
 Extracts and sign-extends non-contiguous instruction bit fields into standard 32-bit signed values:
 * **I-Type (`opcode = 0010011`):** Decodes instruction `0xffb00093` (`addi x1, x0, -5`) $\rightarrow$ generates sign-extended `imm = -5`.
@@ -94,7 +94,7 @@ Extracts and sign-extends non-contiguous instruction bit fields into standard 32
 
 ### 4. Control Unit
 
-![Control Unit Waveform](docs/waveforms/Control_Waveform.png)
+![Control Unit Waveform](Demo_pics/waveforms/Control_Waveform.png)
 
 Decodes instruction opcode, funct3, and funct7 fields into datapath multiplexer and enable controls:
 * **R-Type (`opcode = 0110011`, `funct7 = 0000000`):** Asserts `reg_write = 1`, `alu_src = 0` (register operand), `alu_ctrl = 0000` (ADD).
@@ -107,7 +107,7 @@ Decodes instruction opcode, funct3, and funct7 fields into datapath multiplexer 
 
 ### 5. Top-Level Core Datapath Execution
 
-![Core Waveform](docs/waveforms/Core_Waveform.png)
+![Core Waveform](Demo_pics/waveforms/Core_Waveform.png)
 
 Demonstrates end-to-end execution of a five-instruction program with memory operations and register dependencies:
 
