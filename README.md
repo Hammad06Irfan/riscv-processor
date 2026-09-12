@@ -56,7 +56,7 @@ All modules and the integrated processor core were verified via self-checking Sy
 
 ### 1. Arithmetic Logic Unit (ALU)
 
-![ALU Waveform](Demo_pics/Alu_Waveform.png)
+![ALU Waveform](Demo_pics/ALU_Waveform.png)
 
 The ALU supports all standard RV32I operations, signed comparisons, and equality zero-flag assertion:
 * **`0 ps – 10000 ps` (ADD):** Inputs $a = 15$, $b = 27$ with `alu_ctrl = 0` $\rightarrow$ `result = 42`.
