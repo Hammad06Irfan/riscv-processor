@@ -1,0 +1,6 @@
+cat << 'EOF' > .gitignore
+build/
+*.vvp
+*.vcd
+.DS_Store
+EOF
